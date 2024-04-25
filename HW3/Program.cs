@@ -1,7 +1,12 @@
+using HW3.Models.Abstract_entities;
+using HW3.Models.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+builder.Services.AddTransient<IFriendService, Friend>();
+//builder.Services.AddTransient<IFriendService, StubFriendService>();
 
 var app = builder.Build();
 
