@@ -1,8 +1,8 @@
-﻿using HW2.Models;
+﻿using HW3.Models.Entities;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HW2.Controllers
+namespace HW3.Controllers
 {
     public class FriendController : Controller
     {

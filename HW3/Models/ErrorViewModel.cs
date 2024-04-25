@@ -1,4 +1,4 @@
-namespace HW2.Models;
+namespace HW3.Models;
 
 public class ErrorViewModel
 {
