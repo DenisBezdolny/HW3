@@ -1,0 +1,28 @@
+﻿@model Friend
+@using HW2.Controllers;
+
+
+<h2>Удаление друга</h2>
+
+@using (Html.BeginForm(actionName: nameof(FriendController.Delete),
+  controllerName: Html.ViewContext.RouteData.Values["controller"].ToString(),
+  FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+
+
+    <p>Имя: @Model.FriendName</p>
+    <p>Место: @Model.Place</p>
+
+    <div class="form-group">
+
+        @Html.HiddenFor(model => model.FriendId, new { @class = "form-control" })
+        @Html.HiddenFor(model => model.FriendName, new { @class = "form-control" })
+        @Html.HiddenFor(model => model.Place, new { @class = "form-control" })
+    </div>
+
+    <p>Вы хотите удалить этого друга?</p>
+
+    <button type="submit" class="btn btn-primary">Delete</button>
+}

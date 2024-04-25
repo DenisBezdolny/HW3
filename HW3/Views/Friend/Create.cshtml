@@ -1,0 +1,24 @@
+﻿@model Friend
+@using HW2.Controllers;
+
+
+<h2>Создание нового друга</h2>
+
+@using (Html.BeginForm(actionName: nameof(FriendController.Create),
+   controllerName: Html.ViewContext.RouteData.Values["controller"].ToString(),
+   FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.FriendName)
+        @Html.TextBoxFor(model => model.FriendName, new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Place)
+        @Html.TextBoxFor(model => model.Place, new { @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-danger">Создать</button>
+}

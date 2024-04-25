@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Friend>
+<h2>Список друзей</h2>
+<table class=“table”>
+    <tr>
+        <th>ID друга</th>
+        <th>Имя друга</th>
+        <th>Место нахождения друга</th>
+    </tr>
+    @foreach (var friend in Model)
+    {
+        <tr>
+            <td>@friend.FriendId</td>
+            <td>@friend.FriendName</td>
+            <td>@friend.Place</td>
+            <td>
+                <a href="@Url.Action("Edit", new { id = friend.FriendId })" class="btn btn-primary">Edit</a>
+            </td>
+            <td>||</td>
+            <td>
+                <a href="@Url.Action("Delete", new { id = friend.FriendId })" class="btn btn-primary">Delete</a>
+            </td>
+
+        </tr>
+    }
+</table>
+
+<form action="/Friend/Create">
+    <button type="submit">Create</button>
+</form>
+
