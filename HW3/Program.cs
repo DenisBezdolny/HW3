@@ -14,6 +14,7 @@ builder.Services.AddControllersWithViews();
 
 bool isDevelopment = builder.Environment.IsDevelopment();
 
+
 if (isDevelopment)
 {
     builder.Services.AddTransient<IFriendService, StubFriendService>();
